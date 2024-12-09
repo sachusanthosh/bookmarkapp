@@ -299,4 +299,27 @@ p a:hover {
   p {
     font-size: 12px;
   }
+  .homeBackground{
+    background: url('/images/home-bg.png');
+    height: calc(100vh - 60px);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
+
+  .homeButton{
+    width: 200px;
+    padding: 12px;
+    /* margin-top: 15px; */
+    background-color: #124E66;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 500ms;
+  }
 }
