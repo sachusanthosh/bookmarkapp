@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head') %>
+  
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <% if (locals.message) { %>
+    <div class="alert alert-danger" role="alert">
+      <%= locals.message %>
+  </div>
+  <% } %>
+
+  <div class="container bmAddingContainer">
+    <form id="bmAddingForm" action="/bookmark" method="post">
+      <div class="mb-3">
+        <label for="title" class="form-label">Add Title</label>
+        <input name="title" type="text" class="form-control" id="title" >
+      </div>
+      <div class="mb-3">
+        <label for="url" class="form-label">Add Url</label>
+        <input name="url" type="url" class="form-control" id="url">
+      </div>
+      <button id="addButton" name="submit" type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+
+  <%- include('./partials/scripts') %>
+</body>
+</html>

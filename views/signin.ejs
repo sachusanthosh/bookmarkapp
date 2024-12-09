@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+
+
+    <div class="container-fluid main">
+
+      <!-- left side -->
+      <div class="left">
+        <div class="branding">
+          <img src="/images/BM-t-logo.png" alt="">
+          <h4>ClipIt</h4>
+        </div>
+
+        <div class="poster">
+          <img src="/images/poster-t.png" alt="">
+        </div>
+
+        <div class="tag-line">
+          <h4 class="tag-head">Discover, save, and revisit effortlessly.</h4><br>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis tempore nulla sapiente ipsam porro
+            optio harum voluptates perferendis dolor ab, eveniet illum quidem, itaque quas</p>
+        </div>
+      </div>
+
+      <!-- right side -->
+      <div class="right ">
+        <div class="form-container">
+          <form action="/user/signin" method="post">
+            <h3>Log In</h3>
+            <!-- <input id="name" name="name" type="text" placeholder="Enter your name"> -->
+            <input id="email" name="email" type="email" placeholder="Enter Email">
+            <input id="password" name="password" type="password" placeholder="Enter password">
+            <button id="signup" name="signup" type="submit">Get Started</button>
+            <hr>
+            <p id="errorShow"></p>
+            <p>Don't have an account? <a href="/user/signup">SIGNUP HERE</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <%- include('./partials/scripts') %>
+</body>
+
+</html>

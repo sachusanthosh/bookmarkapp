@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+
+    <% if (locals.user) { %>
+      <div class="container homeBookMarks">
+        <div id="bookmarksContainer" class="row">
+          <h3 style="font-weight: bold;">Your Bookmarks...</h3>
+          <% bookmarks.forEach(bookmark=> { %>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title"><b>
+                      <%= bookmark.title %>
+                    </b></h5>
+                </div>
+                <div class="card-body">
+                  <p class="card-text"><a href="<%= bookmark.url %>">
+                      <%= bookmark.url %>
+                    </a></p>
+                  <br>
+                  <p class="time">created at: <%= bookmark.createdAt.toLocaleString() %>
+                  </p>
+                  <a style="background-color: #47a2a9; color: #fff;" href="/bookmark/edit/<%= bookmark._id %>" class="btn " >Edit</a>
+                  <a style="background-color: #f54854" href="/bookmark/delete/<%= bookmark._id %>" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+        <!-- Pagination -->
+        <div class="paginationContainer">
+          <div class="pagination">
+            <% if (locals.currentPage> 1) { %>
+              <a href="/?page=<%= locals.currentPage - 1 %>">&laquo; Previous</a>
+              <% } %>
+                <span>Page <%= locals.currentPage %> of <%= locals.totalPages %></span>
+                <% if (locals.currentPage < locals.totalPages) { %>
+                  <a href="/?page=<%= locals.currentPage + 1 %>">Next &raquo;</a>
+                  <% } %>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+        <div class="container">
+
+        </div>
+
+
+
+        <%- include('./partials/scripts') %>
+</body>
+
+</html>

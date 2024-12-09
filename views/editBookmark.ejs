@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+
+  <div class="container mt-5">
+    <h2>Edit Bookmark</h2>
+    <form action="/bookmark/edit/<%= bookmark._id %>" method="POST">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="title" type="text" class="form-control" id="title" value="<%= bookmark.title %>" required>
+      </div>
+      <div class="mb-3">
+        <label for="url" class="form-label">URL</label>
+        <input name="url" type="url" class="form-control" id="url" value="<%= bookmark.url %>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+
+  <%- include('./partials/scripts') %>
+</body>
+
+</html>
