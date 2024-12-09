@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -7,9 +8,9 @@ const mongoose = require('mongoose');
 const Bookmark = require('./models/bookmark');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 8000;
 
-mongoose.connect('mongodb://localhost:27017/bookMarkApp').then((e)=>{
+mongoose.connect(process.env.MONGO_URL).then((e)=>{
   console.log('MongoDb is connected');
 })
 

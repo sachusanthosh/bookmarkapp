@@ -8,6 +8,39 @@ body {
   font-family: Arial, sans-serif;
   background-color: aliceblue;;
 }
+.homeBackground{
+  background: url('/images/home-bg.png');
+  height: calc(100vh - 60px);
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+.homeButton{
+  width: 200px;
+  padding: 12px;
+  /* margin-top: 15px; */
+  background-color: #124E66;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 500ms;
+  position: relative;
+  margin-top: 30%;
+  margin-left: 60%;
+}
+.homeButton:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #176989;
+}
+.homeButton:focus,
+.homeButton:active {
+  background-color: #124E66;
+  transition: none;
+}
 .navbar{
   background-color: #212A31;
 }

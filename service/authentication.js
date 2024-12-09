@@ -1,6 +1,6 @@
 const JWT = require('jsonwebtoken');
 
-const secret ="d4e8f759a6c8460aa231bf82f4a53f9207e12c5b3d92eea7a35a4b2e69f24f81";
+const secret = process.env.SECRET;
 
 
 function createUserToken(user) {
